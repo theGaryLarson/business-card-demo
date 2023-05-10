@@ -42,7 +42,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    placard("Gary M. Larson", "Android Developer")
+                    displayBusinessCard(name = "Gary M. Larson",
+                        title = "Android Developer",
+                        phone = "206.332.9617",
+                        email = "gary.larson.dev@gmail.com",
+                        socialMedia = "linkedin.com/in/theGaryLarson/")
                 }
             }
         }
@@ -53,13 +57,13 @@ class MainActivity : ComponentActivity() {
 fun displayBusinessCard(name: String, title: String, phone: String,
                         email: String, socialMedia: String, modifier: Modifier = Modifier) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxSize()
 
     )
     {
-
         placard(name, title)
-        Spacer(Modifier.height(75.dp))
+        Spacer(Modifier.height(175.dp))
         contactInfo(
             phone = phone,
             socialMedia = socialMedia,
@@ -74,7 +78,7 @@ fun placard(name: String, title: String, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
         modifier = modifier.padding( bottom = 4.dp, start = 8.dp, end = 8.dp)
     ) {
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(150.dp))
         Image(
             painter = image,
             contentDescription = null,
